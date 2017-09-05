@@ -6,5 +6,3 @@ $ cd HackZurich\HackZurich.Web\app
 $ npm install
 $ npm start
 ```
-
-test
