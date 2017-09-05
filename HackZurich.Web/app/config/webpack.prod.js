@@ -22,9 +22,9 @@ module.exports = {
 
     entry: {
 
-        'vendor': './app/vendor.ts',
-        'polyfills': './app/polyfills.ts',
-        'main': './app/main.ts'
+        'vendor': './src/vendor.ts',
+        'polyfills': './src/polyfills.ts',
+        'main': './src/main.ts'
     },
 
     /*
@@ -160,9 +160,9 @@ module.exports = {
         }),
 
 
-        new CopyWebpackPlugin([
-            { from: "./web.config", to: "./" }
-        ]),
+        // new CopyWebpackPlugin([
+        //     { from: "./web.config", to: "./" }
+        // ]),
 
         new HtmlWebpackPlugin({
             template: './index.html',
