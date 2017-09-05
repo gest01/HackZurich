@@ -14,7 +14,7 @@ module.exports = {
 
     output: {
 
-        path: __dirname + '/../dist',
+        path: __dirname + '/../../dist',
         filename: '[name].[chunkhash].bundle.js',
         sourceMapFilename: '[name].[chunkhash].bundle.map',
         chunkFilename: '[id].[chunkhash].chunk.js'
