@@ -6,7 +6,7 @@ export interface IAppConfig {
 
 export let APP_CONFIG  = new InjectionToken<IAppConfig>("config");
 export const AppConfig: IAppConfig = {
-    apiEndpoint: readSetting("apiEndpoint", "localhost:8080/api"),
+    apiEndpoint: readSetting("apiEndpoint", "http://hackzurich-backend.azurewebsites.net"),
 };
 
 function readSetting(key: string, defaultValue: string): string {

@@ -18,8 +18,9 @@ export class HomeComponent implements OnInit {
     public ngOnInit(): void {
         this.helloWorldText = "Hello by Simon";
 
-        this.dataService.getData().subscribe((f) => {
-            console.log("result = ", f);
+        this.dataService.getHelloWorld().subscribe((helloworld) => {
+            console.log("result = ", helloworld);
+            this.helloWorldText = this.helloWorldText + " " + helloworld;
         });
     }
 }

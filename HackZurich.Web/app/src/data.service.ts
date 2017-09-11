@@ -10,9 +10,10 @@ export class DataService {
         @Inject(APP_CONFIG) private config: IAppConfig,
         private http: Http) { }
 
-    public getData(): Rx.Observable<any[]> {
-        const apiUrl = this.config.apiEndpoint + "/helloEndpoint";
+    public getHelloWorld(): Rx.Observable<any> {
+        const apiUrl = this.config.apiEndpoint + "/";
         console.log("apiUrl = ", apiUrl);
-        return Rx.Observable.of( [] );
+        return this.http.get( apiUrl ).map( (response) => response.json() as any );
+        //return Rx.Observable.of( [] );
     }
 }
