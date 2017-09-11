@@ -7,7 +7,8 @@ import { HttpModule, Http } from "@angular/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home.component";
-
+import { APP_CONFIG, AppConfig } from "./app.config";
+import { DataService } from "./data.service";
 
 @NgModule({
   imports: [
@@ -19,9 +20,11 @@ import { HomeComponent } from "./home.component";
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   providers: [
+    DataService,
+    { provide: APP_CONFIG, useValue: AppConfig },
   ],
   bootstrap: [
     AppComponent,
