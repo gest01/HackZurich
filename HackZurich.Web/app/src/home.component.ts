@@ -10,6 +10,7 @@ import { DataService } from "./data.service";
 export class HomeComponent implements OnInit {
 
     public helloWorldText: string;
+    public people: Rx.Observable<any[]>;
 
     constructor(private dataService: DataService) {
 
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit {
 
     public ngOnInit(): void {
         this.helloWorldText = "Hello by Simon";
+
+        this.people = this.dataService.getPeople();
 
         this.dataService.getHelloWorld().subscribe((helloworld) => {
             console.log("result = ", helloworld);

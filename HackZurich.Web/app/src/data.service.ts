@@ -16,4 +16,9 @@ export class DataService {
         return this.http.get( apiUrl ).map( (response) => response.text() as any );
         //return Rx.Observable.of( [] );
     }
+
+    public getPeople(): Rx.Observable<any[]> {
+        const apiUrl = this.config.apiEndpoint + "/api/personen/";
+        return this.http.get( apiUrl ).map( (response) => response.json() as any[] );
+    }
 }
