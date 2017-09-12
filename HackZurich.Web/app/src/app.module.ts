@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home.component";
 import { APP_CONFIG, AppConfig } from "./app.config";
 import { DataService } from "./data.service";
+import { LioComponent } from "../lio/lio.component";
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { DataService } from "./data.service";
   declarations: [
     AppComponent,
     HomeComponent,
+    LioComponent,
   ],
   providers: [
     DataService,
