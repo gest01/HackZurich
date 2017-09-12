@@ -25,7 +25,9 @@ Doku mit Azure
 https://docs.microsoft.com/de-de/azure/app-service/app-service-deploy-spring-boot-web-app-on-azure
 
 Erreichbar unter:
+
 Hello World: http://hackzurich-backend.azurewebsites.net/
+
 JSON Personen Liste: http://hackzurich-api.azurewebsites.net/api/personen/
 
 
