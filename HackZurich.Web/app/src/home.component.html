@@ -4,7 +4,8 @@
 
 <table class="table table-condensed table-hover">
     <tr *ngFor="let person of people | async">
+        <td>{{ person.id }}</td>
         <td>{{ person.vorname }}</td>
-        <td>{{ person.name }}</td>
+        <td>{{ person.nachname }}</td>
     </tr>
 </table>
