@@ -1,4 +1,1 @@
-<h1> Hello World </h1>
-
-
-<p *ngFor="let item of data |async"> {{ item | json }} </p>
+<detail-item *ngFor="let item of data | async" [item]="item"></detail-item>
