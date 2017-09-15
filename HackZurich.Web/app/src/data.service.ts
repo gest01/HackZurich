@@ -13,12 +13,11 @@ export class DataService {
     public getHelloWorld(): Rx.Observable<any> {
         const apiUrl = this.config.apiEndpoint + "/";
         console.log("apiUrl = ", apiUrl);
-        return this.http.get( apiUrl ).map( (response) => response.text() as any );
-        //return Rx.Observable.of( [] );
+        return this.http.get(apiUrl).map((response) => response.text() as any);
     }
 
     public getPeople(): Rx.Observable<any[]> {
         const apiUrl = this.config.apiEndpoint + "/api/personen/";
-        return this.http.get( apiUrl ).map( (response) => response.json() as any[] );
+        return this.http.get(apiUrl).map((response) => response.json() as any[]);
     }
 }
