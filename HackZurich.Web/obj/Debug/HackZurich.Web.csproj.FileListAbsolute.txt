@@ -1,0 +1,16 @@
+C:\temp\HackZurich\HackZurich.Web\bin\HackZurich.Web.dll.config
+C:\temp\HackZurich\HackZurich.Web\bin\HackZurich.Web.dll
+C:\temp\HackZurich\HackZurich.Web\bin\HackZurich.Web.pdb
+C:\temp\HackZurich\HackZurich.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\temp\HackZurich\HackZurich.Web\bin\Newtonsoft.Json.dll
+C:\temp\HackZurich\HackZurich.Web\bin\System.Net.Http.Formatting.dll
+C:\temp\HackZurich\HackZurich.Web\bin\System.Web.Http.dll
+C:\temp\HackZurich\HackZurich.Web\bin\System.Web.Http.WebHost.dll
+C:\temp\HackZurich\HackZurich.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\temp\HackZurich\HackZurich.Web\bin\Newtonsoft.Json.xml
+C:\temp\HackZurich\HackZurich.Web\bin\System.Net.Http.Formatting.xml
+C:\temp\HackZurich\HackZurich.Web\bin\System.Web.Http.xml
+C:\temp\HackZurich\HackZurich.Web\bin\System.Web.Http.WebHost.xml
+C:\temp\HackZurich\HackZurich.Web\obj\Debug\HackZurich.Web.csprojResolveAssemblyReference.cache
+C:\temp\HackZurich\HackZurich.Web\obj\Debug\HackZurich.Web.dll
+C:\temp\HackZurich\HackZurich.Web\obj\Debug\HackZurich.Web.pdb
