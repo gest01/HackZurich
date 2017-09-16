@@ -16,12 +16,23 @@ export class OverallStatsComponent implements OnInit {
     constructor(
         private firebaseService: FirebaseService,
         private statsService: StatsService,
-    ) { }
+    ) {
+        this.itemScore = 0;
+    }
 
     public ngOnInit(): void {
 
         this.statsService.getUserHealthScore(this.user.uid).subscribe((userHealtScore) => {
-            this.itemScore = Math.floor(userHealtScore * 10) / 10;
+            const total = Math.floor(userHealtScore * 10) / 10;
+            const timer = setInterval(() => {
+                if (this.itemScore < total) {
+                    this.itemScore++;
+                } else {
+                    this.itemScore = total;
+                    clearInterval(timer);
+                }
+            }, 25);
+
         });
     }
 }
