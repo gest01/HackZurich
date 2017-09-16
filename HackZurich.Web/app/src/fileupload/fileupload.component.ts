@@ -18,7 +18,7 @@ export class FileUploadComponent {
         private dataService: DataService,
         @Inject(APP_CONFIG) private config: IAppConfig,
     ) {
-        const url = this.config.apiEndpoint + "/api/cleanfood/image/uploadAndAnalyze";
+        const url = this.config.apiEndpoint + "/api/cleanfood/image/upload";
         this.uploader = new FileUploader({
             url: url,
         });
