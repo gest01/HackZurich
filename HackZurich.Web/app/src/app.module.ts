@@ -21,9 +21,9 @@ import { LoginService } from "./login/login.service";
 import { FileUploadModule } from "ng2-file-upload";
 import { FileUploadComponent } from "./fileupload/fileupload.component";
 import { NouisliderModule } from "ng2-nouislider";
-import { PopoverModule } from "ngx-popover";
 import { NgLoadingBarModule } from "ng-loading-bar";
 import { HTTP_INTERCEPTOR } from "./http-interceptor";
+import { PopoverModule } from "ngx-bootstrap";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -40,12 +40,12 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    PopoverModule.forRoot(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
     FileUploadModule,
     NouisliderModule,
-    PopoverModule,
     NgLoadingBarModule,
   ],
   declarations: [

@@ -1,10 +1,12 @@
-<popover-content #myPopover title="User Ratings" placement="auto right" [animation]="true" [closeOnMouseOutside]="true" [closeOnClickOutside]="true">
+<template #myPopover>
 
     <div class="conainer">
         <div class="row">
             <img class="popover-image" max-height="200" width="272" src="{{ entry.imageThumbnailUrl}}" alt="...">
         </div>
-        <div class="row" *ngIf="userVotes && userVotes.length <= 0">No ratings.</div>
+        <div class="row" *ngIf="userVotes && userVotes.length <= 0">
+            <div class="popover-col-text">No ratings.</div>
+        </div>
         <div class="row" *ngFor="let item of userVotes; let i = index">
             <div class="col-md-8 detail-user" *ngIf="entry && entry.user">
                 <img src="{{ item.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> <span class="nowrap">{{ item.displayName }}</span>
@@ -14,14 +16,14 @@
             </div>
         </div>
     </div>
-</popover-content>
+</template>
 
 <div class="panel panel-default color-{{ classNumber }}">
     <div class="panel-body">
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                            <img class="media-object img-circle" [popover]="myPopover" [popoverOnHover]="true" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
+                            <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
                         </a>
             </div>
             <div class="media-body">

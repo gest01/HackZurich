@@ -29,7 +29,7 @@
     "ng-loading-bar": "0.0.9",
     "ng2-file-upload": "^1.2.1",
     "ng2-nouislider": "^1.6.2",
-    "ngx-popover": "0.0.16",
+    "ngx-bootstrap": "^1.9.3",
     "nouislider": "^10.1.0",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.16"
