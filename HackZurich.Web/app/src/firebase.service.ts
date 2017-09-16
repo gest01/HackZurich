@@ -37,11 +37,13 @@ export class FirebaseService {
             displayName: this.currentUser.displayName,
             uid: this.currentUser.uid,
         };
-        console.log(voteObject);
         return this.set("/entries/" + entrykey + "/votes/" + this.currentUser.uid, voteObject);
     }
-    public getUserVote(entrykey: string): FirebaseObjectObservable<void> {
+    public getUserVote(entrykey: string): FirebaseObjectObservable<any> {
         return this.get("/entries/" + entrykey + "/votes/" + this.currentUser.uid);
+    }
+    public getUserVotes(entrykey: string): FirebaseListObservable<any[]> {
+        return this.list("/entries/" + entrykey + "/votes/");
     }
 
     public get(path: string): FirebaseObjectObservable<any> {

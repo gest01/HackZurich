@@ -20,6 +20,7 @@ import { LoginService } from "./login/login.service";
 import { FileUploadModule } from "ng2-file-upload";
 import { FileUploadComponent } from "./fileupload/fileupload.component";
 import { NouisliderModule } from "ng2-nouislider";
+import { PopoverModule } from "ngx-popover";
 import { TakePictureComponent} from "./camera/takepicture.component";
 
 export const firebaseConfig = {
@@ -42,6 +43,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     FileUploadModule,
     NouisliderModule,
+    PopoverModule,
   ],
   declarations: [
     AppComponent,
