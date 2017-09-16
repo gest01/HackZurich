@@ -9,6 +9,8 @@ import { FirebaseService } from "../firebase.service";
 })
 
 export class StatsItemComponent implements OnInit {
+    userScore: number;
+    public itemScore: number;
     @Input()
     public user: any;
     @Input()
@@ -31,7 +33,9 @@ export class StatsItemComponent implements OnInit {
             }
 
             this.userValue = value.vote;
-            this.classNumber = Math.floor((value.vote + 9.99) / 10);
+            this.itemScore = 42; // todo use ItemScore from service
+            this.userScore = 23; // todo ...
+            this.classNumber = Math.floor((this.itemScore + 9.99) / 10);
         });
 
         this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) => {

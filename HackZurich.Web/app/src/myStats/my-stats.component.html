@@ -10,7 +10,7 @@
         </div>
         
         <div *ngIf="entries | async; let entries;" >
-            <stats-item *ngFor="let entry of entries | onlyMine:{'uid': user.uid}" [entry]="entry" [user]="user"></stats-item>
+            <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
         </div>
     </accordion-group>
 </accordion>
