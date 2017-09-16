@@ -7,6 +7,7 @@ import { HttpModule, Http } from "@angular/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home.component";
+import { MyStatsComponent } from "./myStats/my-stats.component";
 import { APP_CONFIG, AppConfig } from "./app.config";
 import { DataService } from "./data.service";
 import { FirebaseService } from "./firebase.service";
@@ -50,6 +51,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
+    MyStatsComponent,
     DetailComponent,
     LoginComponent,
     FileUploadComponent,

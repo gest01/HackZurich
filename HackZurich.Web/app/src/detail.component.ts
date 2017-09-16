@@ -12,13 +12,13 @@ export class DetailComponent {
     @Input() public user: any;
     public classNumber: number;
 
-    public userValue: any = 0;
+    public userValue: any;
     public userVotes: any[];
 
     @Input() public set entry(entry: any) {
         this.internalEntry = entry;
 
-        this.firebaseService.getUserVote(entry.$key, this.user).defaultIfEmpty({ vote: 50 }).subscribe((value) => {
+        this.firebaseService.getUserVote(entry.$key, this.user).defaultIfEmpty({ vote: 0 }).subscribe((value) => {
             this.userValue = value.vote;
             this.classNumber = Math.floor((this.userValue + 9.99) / 10);
         });
