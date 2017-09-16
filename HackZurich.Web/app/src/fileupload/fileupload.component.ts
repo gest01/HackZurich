@@ -1,3 +1,4 @@
+import { DataService } from "../data.service";
 import { Component, OnInit, Inject, Input } from "@angular/core";
 import { FileUploader, FileItem, ParsedResponseHeaders } from "ng2-file-upload";
 import { IAppConfig, APP_CONFIG } from "../app.config";
@@ -14,6 +15,7 @@ export class FileUploadComponent {
 
     constructor(
         private firebase: FirebaseService,
+        private dataService: DataService,
         @Inject(APP_CONFIG) private config: IAppConfig,
     ) {
         const url = this.config.apiEndpoint + "/api/cleanfood/image/uploadAndAnalyze";
@@ -32,8 +34,9 @@ export class FileUploadComponent {
     }
 
     private createFoodEntry(imageId: number) {
+        const imageUrl = this.config.apiEndpoint + "/api/cleanfood/image/" + imageId;
         const entry = {
-            imageUrl: "http://hackzurich-api.azurewebsites.net/api/cleanfood/image/" + imageId,
+            imageUrl: imageUrl,
             user: {
                 uid: this.user.uid,
                 displayName: this.user.displayName,
@@ -42,7 +45,8 @@ export class FileUploadComponent {
         };
 
         this.firebase.createFoodEntry(entry).then((f) => {
-            console.log("YES", f.key());
+            const entryId = f.key;
+            this.dataService.notifyProcess(entryId, imageUrl);
         });
     }
 } 
