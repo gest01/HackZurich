@@ -29,7 +29,7 @@
             <div class="media-body">
                 <div class="conainer">
                     <div class="row">
-                        <div class="col-md-8">{{entry.foodFacts.healthscore}}</div>
+                        <div class="col-md-8">Evaluated food score: {{entry.foodFacts.healthscore}}</div>
                         <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
                             <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
                         </div>
