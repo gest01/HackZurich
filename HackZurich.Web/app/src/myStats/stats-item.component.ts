@@ -39,12 +39,6 @@ export class StatsItemComponent implements OnInit {
         });
     }
 
-    public sliderChanged(event: any): void {
-        this.firebaseService.updateUserVote(this.entry.$key, this.userValue, this.user).then((f) => {
-            console.log("saved to fb");
-        });
-    }
-
     public delete(entry: any): void {
         this.firebaseService.deleteItem("/entries/" + entry.$key);
     }

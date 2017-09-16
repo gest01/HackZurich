@@ -23,15 +23,15 @@
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                            <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
-                        </a>
+                    <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
+                </a>
             </div>
             <div class="media-body">
                 <div class="conainer">
                     <div class="row">
-                        <nouislider class="col-md-8" [min]="0" [max]="100" [disabled]="entry.user.uid === user.uid" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
+                        <div class="col-md-8">{{entry.foodFacts.healthscore}}</div>
                         <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
-                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">                            {{ entry.user.displayName }}
+                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
