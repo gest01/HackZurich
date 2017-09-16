@@ -1,3 +1,4 @@
+import { StatsService } from "./stats.service";
 import { Component, OnInit, Input } from "@angular/core";
 import * as Rx from "rxjs";
 import { FirebaseObjectObservable } from "angularfire2/database";
@@ -13,9 +14,11 @@ export class OverallStatsComponent implements OnInit {
 
     constructor(
         private firebaseService: FirebaseService,
+        private statsService: StatsService,
     ) { }
 
     public ngOnInit(): void {
         //
+        console.log(this.user);
     }
 }

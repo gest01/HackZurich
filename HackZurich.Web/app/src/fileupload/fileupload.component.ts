@@ -50,6 +50,7 @@ export class FileUploadComponent {
         const entry = {
             imageUrl: this.config.apiEndpoint + "/api/cleanfood/image/" + imageId,
             imageThumbnailUrl: this.config.apiEndpoint + "/api/cleanfood/image/thumb/" + imageId,
+            timestamp : new Date().toISOString(),
             user: {
                 uid: this.user.uid,
                 displayName: this.user.displayName,
