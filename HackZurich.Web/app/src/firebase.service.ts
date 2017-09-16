@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 import * as firebase from "firebase/app";
-
+import * as Rx from "rxjs";
 @Injectable()
 export class FirebaseService {
 
@@ -27,7 +27,7 @@ export class FirebaseService {
         this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
 
-    public user(): any {
+    public user(): Rx.Observable<any> {
         return this.afAuth.authState;
     }
 }

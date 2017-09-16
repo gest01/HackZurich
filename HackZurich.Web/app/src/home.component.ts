@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FirebaseListObservable } from "angularfire2/database";
 import { FirebaseService } from "./firebase.service";
-import { Observable } from "rxjs";
+import * as Rx from "rxjs";
 
 @Component({
     selector: "home",
@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit {
 
     public ngOnInit(): void {
         this.entries = this.firebase.list("/entries");
-        this.user = this.firebase.user();
+        this.firebase.user().subscribe( (user) => this.user = user );
     }
 
     public createEntry(user: any): void {
         const val = {
             imageUrl: "http://www.google.com",
             healthscore: 12,
-            user: "sjames bond",
+            user: user.uid,
             google: {
                 value1: 1,
                 value2: "asdsd",
