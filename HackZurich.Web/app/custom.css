@@ -152,14 +152,14 @@ body {
   padding-top: 8px;
 }
 
-.color-1 { background-color: rgba(255, 0, 0, 0.2) ; border-color: rgba(255, 0, 0, 0.8) ; }
-.color-2 { background-color: rgba(255, 64, 0, 0.2) ; border-color: rgba(255, 64, 0, 0.8) ; }
+.color-1 { background-color: rgba(255, 0, 0, 0.4) ; border-color: rgba(255, 0, 0, 0.8) ; }
+.color-2 { background-color: rgba(255, 64, 0, 0.3) ; border-color: rgba(255, 64, 0, 0.8) ; }
 .color-3 { background-color: rgba(255, 128, 0, 0.2) ; border-color: rgba(255, 128, 0, 0.8) ; }
-.color-4 { background-color: rgba(255, 191, 0, 0.2) ; border-color: rgba(255, 191, 0, 0.8) ; }
-.color-5 { background-color: rgba(255, 255, 0, 0.2) ; border-color: rgba(255, 255, 0, 0.8) ; }
-.color-6 { background-color: rgba(191, 255, 0, 0.2) ; border-color: rgba(191, 255, 0, 0.8) ; }
-.color-7 { background-color: rgba(128, 255, 0, 0.2) ; border-color: rgba(128, 255, 0, 0.8) ; }
-.color-8 { background-color: rgba(64, 255, 0, 0.2) ; border-color: rgba(64, 255, 0, 0.8) ; }
-.color-9 { background-color: rgba(0, 255, 0, 0.2) ; border-color: rgba(0, 255, 0, 0.8) ; }
-.color-10 {background-color: rgba(0, 255, 64, 0.2) ; border-color:rgba(0, 255, 64, 0.8) ;}
-.color-11 {background-color: rgba(0, 255, 128, 0.2) ; border-color:rgba(0, 255, 128, 0.8) ;}
+.color-4 { background-color: rgba(255, 191, 0, 0.1) ; border-color: rgba(255, 191, 0, 0.8) ; }
+.color-5 { background-color: rgba(255, 255, 0, 0.1) ; border-color: rgba(255, 255, 0, 0.8) ; }
+.color-6 { background-color: rgba(191, 255, 0, 0.1) ; border-color: rgba(191, 255, 0, 0.8) ; }
+.color-7 { background-color: rgba(128, 255, 0, 0.1) ; border-color: rgba(128, 255, 0, 0.8) ; }
+.color-8 { background-color: rgba(64, 255, 0, 0.1) ; border-color: rgba(64, 255, 0, 0.8) ; }
+.color-9 { background-color: rgba(0, 255, 0, 0.2  ) ; border-color: rgba(0, 255, 0, 0.8) ; }
+.color-10 {background-color: rgba(0, 255, 64, 0.3) ; border-color:rgba(0, 255, 64, 0.8) ;}
+.color-11 {background-color: rgba(0, 255, 128, 0.4) ; border-color:rgba(0, 255, 128, 0.8) ;}
