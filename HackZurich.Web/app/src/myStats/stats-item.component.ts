@@ -35,7 +35,6 @@ export class StatsItemComponent implements OnInit {
             }
 
             this.userValue = value.vote;
-            this.itemScore = 42; // todo use ItemScore from service
             this.classNumber = Math.floor((this.itemScore + 9.99) / 10);
         });
 
@@ -43,9 +42,9 @@ export class StatsItemComponent implements OnInit {
             this.userVotes = votes;
         });
 
-        // this.statsService.getDetailStats(this.entry.$key, this.user.uid).subscribe((stats) => {
-        //     console.log("YES getDetailStats !!!", stats);
-        // });
+        this.statsService.getUserHealthScore(this.user.uid).subscribe((userHealtScore) => {
+            this.itemScore = userHealtScore;
+        });
 
         this.statsService.getAverageEntryScore(this.entry.$key).subscribe((stats) => {
             this.userScore = Math.floor(stats.entryScore * 10) / 10;
