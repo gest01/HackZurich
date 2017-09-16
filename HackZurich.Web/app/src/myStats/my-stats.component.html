@@ -1,19 +1,15 @@
 <h1>My Stats</h1>
 
 
-<div *ngIf="user | async; let user;">
-    <overall-stats [user]="user"></overall-stats>
-
-    <accordion>
-        <accordion-group #group [isOpen]="status.isOpen">
-            <div accordion-heading>
-                My food jurnal
-                <i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
-            </div>
-
-            <div *ngIf="entries | async; let entries;">
-                <stats-item *ngFor="let entry of entries | onlyMine:{'uid': user.uid}" [entry]="entry" [user]="user"></stats-item>
-            </div>
-        </accordion-group>
-    </accordion>
-</div>
+<accordion *ngIf="user | async; let user;">
+    <accordion-group #group [isOpen]="status.isOpen">
+        <div accordion-heading>
+            My food jurnal
+            <i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+        </div>
+        
+        <div *ngIf="entries | async; let entries;" >
+            <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
+        </div>
+    </accordion-group>
+</accordion>

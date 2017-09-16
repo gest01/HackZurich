@@ -18,7 +18,7 @@
     </div>
 </ng-template>
 
-<div class="panel panel-default color-{{ classNumber }}">
+<div class="panel panel-default color-{{ classNumber }}" *ngIf="entry.user.uid != user.uid">
     <div class="panel-body">
         <div class="media">
             <div class="media-left">
@@ -34,7 +34,7 @@
                             <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">                            {{ entry.user.displayName }}
                         </div>
                         <div class="col-md-1">
-                            <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                            <!-- <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> -->
                         </div>
                     </div>
                 </div>
