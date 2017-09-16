@@ -17,15 +17,12 @@ export class DetailComponent {
     }
 
     public voteUp(entry: any): void {
-        console.log("voteUp..." + this.userValue, entry);
     }
 
     public voteDown(entry: any): void {
-        console.log("voteDown..." + this.userValue, entry);
     }
 
     public delete(entry: any): void {
-        console.log("delete...", entry);
         this.firebaseService.deleteItem("/entries/" + entry.$key);
     }
 }
