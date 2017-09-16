@@ -8,36 +8,34 @@ import { FirebaseObjectObservable } from "angularfire2/database";
     templateUrl: "detail.component.html",
 })
 
-export class DetailComponent {
+export class DetailComponent implements OnInit {
     @Input() public user: any;
+    @Input() public entry: any;
+
     public classNumber: number;
 
     public userValue: any;
-    public userVotes: any[];
-
-    @Input() public set entry(entry: any) {
-        this.internalEntry = entry;
-
-        this.firebaseService.getUserVote(entry.$key, this.user).defaultIfEmpty({ vote: 0 }).subscribe((value) => {
-            this.userValue = value.vote;
-            this.classNumber = Math.floor((this.userValue + 9.99) / 10);
-        });
-
-        this.firebaseService.getUserVotes(entry.$key).defaultIfEmpty([]).subscribe((votes) => {
-            this.userVotes = votes;
-        });
-    }
-
-    public get entry(): any {
-        return this.internalEntry;
-    }
-
-    private internalEntry: any;
-
+    public userVotes: any[] = [];
 
     constructor(
         private firebaseService: FirebaseService,
     ) { }
+
+    public ngOnInit(): void {
+        this.firebaseService.getUserVote(this.entry.$key, this.user).subscribe((value) => {
+
+            if (!value.vote) {
+                value.vote = 1;
+            }
+
+            this.userValue = value.vote;
+            this.classNumber = Math.floor((value.vote + 9.99) / 10);
+        });
+
+        this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) => {
+            this.userVotes = votes;
+        });
+    }
 
     public sliderChanged(event: any): void {
         this.firebaseService.updateUserVote(this.entry.$key, this.userValue, this.user).then((f) => {
