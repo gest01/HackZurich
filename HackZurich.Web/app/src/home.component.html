@@ -2,8 +2,10 @@
 <login></login>
 
 <div *ngIf="(user | async)">
-    <detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>    
+    <file-upload></file-upload>
     <button class="btn btn-primary" (click)="createEntry(user)" >create</button>
+    
+    <detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>    
 </div>
 
 

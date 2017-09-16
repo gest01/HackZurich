@@ -17,6 +17,9 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { DetailComponent } from "./detail.component";
 import { LoginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
+import { FileUploadModule } from "ng2-file-upload";
+import { FileUploadComponent } from "./fileupload/fileupload.component";
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -36,12 +39,14 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
+    FileUploadModule,
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     DetailComponent,
     LoginComponent,
+    FileUploadComponent,
   ],
   providers: [
     DataService,

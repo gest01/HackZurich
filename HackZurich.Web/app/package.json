@@ -26,6 +26,7 @@
     "firebase": "^4.3.1",
     "jquery": "^3.2.1",
     "karma": "^1.4.0",
+    "ng2-file-upload": "^1.2.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.16"
   },

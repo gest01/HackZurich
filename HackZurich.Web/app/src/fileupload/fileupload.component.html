@@ -1,0 +1,8 @@
+
+<label class="btn btn-default" for="my-file-selector">
+        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+        <input id="my-file-selector"  ng2FileSelect [uploader]="uploader"  type="file" style="display:none;">
+        Select File
+    </label>
+
+<p>Queue length: {{ uploader?.queue?.length }}</p>
