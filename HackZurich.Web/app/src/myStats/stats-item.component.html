@@ -53,58 +53,34 @@
                                 </div>
                                 <div class="row">
                                     <hr/>
+                                    <!-- <pre>{{entry | json}}</pre> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.google">
                                             <th colspan="10">Google Stats:</th>
                                             <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
+                                                <td>
+                                                    <span *ngFor="let gitem of entry.foodFacts.google">{{gitem.description}}, </span>
+                                                </td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="col-md-6">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.sports">
                                             <th colspan="10">Sport Stats:</th>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
+                                            <tr *ngFor="let titem of entry.foodFacts.sports.text">
+                                                <td>{{titem}}</td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" *ngIf="entry.foodDetails && entry.foodDetails.length > 0">
                                     <div class="col-md-12">
                                         <table class="table table-bordered">
                                             <th colspan="10">Nutrition Facts:</th>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
-                                            </tr>
-                                            <tr>
-                                                <td>....</td>
+                                            <tr *ngFor="let titem of entry.foodFacts.foodDetails[0].servings[0].text">
+                                                <td>{{titem}}</td>
                                             </tr>
                                         </table>
                                     </div>

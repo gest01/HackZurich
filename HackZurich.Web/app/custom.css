@@ -154,6 +154,10 @@ body {
 
 .stats-item{
   margin-bottom: 20px!important;
+} 
+
+.stats-item .table th {
+  padding: 7px;
 }
 
 .color-1 { background-color: rgba(255, 0, 0, 0.4) ; border-color: rgba(255, 0, 0, 0.8) ; }
