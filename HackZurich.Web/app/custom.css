@@ -143,3 +143,11 @@ body {
 .detail-user {
   margin-top: 7px;
 }
+
+.popover-image{
+  margin-top: -10px;
+}
+
+.popover-col-text {
+  padding-top: 8px;
+}
