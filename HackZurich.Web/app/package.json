@@ -26,6 +26,7 @@
     "firebase": "^4.3.1",
     "jquery": "^3.2.1",
     "karma": "^1.4.0",
+    "ng-loading-bar": "0.0.9",
     "ng2-file-upload": "^1.2.1",
     "ng2-nouislider": "^1.6.2",
     "ngx-popover": "0.0.16",
