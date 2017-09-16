@@ -28,6 +28,7 @@ import { StatsItemComponent } from "./myStats/stats-item.component";
 import { OverallStatsComponent } from "./myStats/overall-stats.component";
 import { OnlyMinePipe } from "./only-mine.pipe";
 import { RatingsComponent } from "./ratings/ratings.component";
+import { StatsService } from "./myStats/stats.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -70,6 +71,7 @@ export const firebaseConfig = {
     FirebaseService,
     LoginService,
     HTTP_INTERCEPTOR,
+    StatsService,
     { provide: APP_CONFIG, useValue: AppConfig },
   ],
   bootstrap: [
