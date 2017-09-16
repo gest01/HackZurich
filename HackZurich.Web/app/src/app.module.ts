@@ -23,7 +23,9 @@ import { FileUploadComponent } from "./fileupload/fileupload.component";
 import { NouisliderModule } from "ng2-nouislider";
 import { NgLoadingBarModule } from "ng-loading-bar";
 import { HTTP_INTERCEPTOR } from "./http-interceptor";
-import { PopoverModule } from "ngx-bootstrap";
+import { PopoverModule, AccordionModule  } from "ngx-bootstrap";
+import { StatsItemComponent } from "./myStats/stats-item.component";
+import { OverallStatsComponent } from "./myStats/overall-stats.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -41,6 +43,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     PopoverModule.forRoot(),
+    AccordionModule .forRoot(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
@@ -55,6 +58,8 @@ export const firebaseConfig = {
     DetailComponent,
     LoginComponent,
     FileUploadComponent,
+    StatsItemComponent,
+    OverallStatsComponent,
   ],
   providers: [
     DataService,

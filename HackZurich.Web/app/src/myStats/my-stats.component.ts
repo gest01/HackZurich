@@ -10,6 +10,8 @@ import { FirebaseService } from "../firebase.service";
 export class MyStatsComponent implements OnInit {
     public user: Rx.Observable<any>;
     public entries: FirebaseListObservable<any[]>;
+    public radioModel: string = "Today"; // AllTime, LastWeek
+    public status: any = { isOpen: true };
 
     constructor(
         private firebase: FirebaseService) {

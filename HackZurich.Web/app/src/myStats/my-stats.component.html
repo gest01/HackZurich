@@ -1,1 +1,19 @@
 <h1>My Stats</h1>
+
+<div class="btn-group-lg">
+    <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="AllTime">All Time</label>
+    <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="LastWeek">Last Week</label>
+    <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Today">Today</label>
+</div>
+
+<overall-stats></overall-stats>
+
+<accordion>
+    <accordion-group #group [isOpen]="status.isOpen">
+        <div accordion-heading>
+            My food jurnal
+            <i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+        </div>
+        <stats-item></stats-item> 
+    </accordion-group>
+</accordion>
