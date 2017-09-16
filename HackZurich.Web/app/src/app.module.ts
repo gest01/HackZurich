@@ -15,6 +15,8 @@ import { FirebaseService } from "./firebase.service";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { LoginComponent } from "../login/login.component";
+import { LoginService } from "../login/login.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -39,10 +41,12 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     LioComponent,
+    LoginComponent,
   ],
   providers: [
     DataService,
     FirebaseService,
+    LoginService,
     { provide: APP_CONFIG, useValue: AppConfig },
   ],
   bootstrap: [

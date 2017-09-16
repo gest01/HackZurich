@@ -1,4 +1,7 @@
 <h1> Hello World </h1>
 
+<login ></login>
+
+<p><span *ngIf="!(user | async)">Not </span>logged In </p>
 
 <p *ngFor="let item of data |async"> {{ item | json }} </p>
