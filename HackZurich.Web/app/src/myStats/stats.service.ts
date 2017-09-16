@@ -9,6 +9,21 @@ export class StatsService {
         private firebase: FirebaseService,
     ) { }
 
+    public getUserHealthScore(userId: string): Rx.Observable<number> {
+        return this.firebase.list("/entries").map((entries: any[]) => {
+            const totalEntries = entries.length;
+            let userHealthScore = 0;
+            let userEntries = 0;
+            for (let i = 0; i < totalEntries; i++) {
+                const entry = entries[i];
+                if (entry.user && entry.user.uid === userId) {
+                    userHealthScore += this.calculateStats(entry).entryScore;
+                    userEntries++;
+                }
+            }
+            return userHealthScore / userEntries;
+        });
+    }
 
     public getAverageEntryScore(entryId: string): Rx.Observable<any> {
         return this.firebase.getEntry(entryId).map((entry: any) => {
