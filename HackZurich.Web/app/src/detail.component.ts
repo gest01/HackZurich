@@ -8,9 +8,10 @@ import * as $ from "jquery";
 })
 
 export class DetailComponent implements AfterViewInit {
-    @Input()
-    public entry: any;
-    public userValue: any = 0;
+    @Input() public entry: any;
+    @Input() public user: any;
+    
+    public userValue: number = 0;
 
     constructor(
         private firebaseService: FirebaseService,
