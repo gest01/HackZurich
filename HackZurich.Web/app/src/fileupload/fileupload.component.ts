@@ -45,6 +45,7 @@ export class FileUploadComponent {
     private createFoodEntry(imageId: number) {
         const entry = {
             imageUrl: this.config.apiEndpoint + "/api/cleanfood/image/" + imageId,
+            imageThumbnailUrl: this.config.apiEndpoint + "/api/cleanfood/image/thumb/" + imageId,
             user: {
                 uid: this.user.uid,
                 displayName: this.user.displayName,
