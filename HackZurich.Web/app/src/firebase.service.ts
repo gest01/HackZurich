@@ -27,6 +27,7 @@ export class FirebaseService {
     public set(path: string, value: any): firebase.Promise<void> {
         return this.af.object(path).set(value);
     }
+
     public updateUserVote(entrykey: string, userValue: any, user: any): firebase.Promise<void> {
         const voteObject: any = {
             vote: userValue,
@@ -43,6 +44,10 @@ export class FirebaseService {
 
     public getUserVotes(entrykey: string): FirebaseListObservable<any[]> {
         return this.list("/entries/" + entrykey + "/votes/");
+    }
+
+    public getEntry(entryKey: string): FirebaseObjectObservable<any> {
+        return this.get("/entries/" + entryKey);
     }
 
     public get(path: string): FirebaseObjectObservable<any> {

@@ -18,7 +18,5 @@ export class OverallStatsComponent implements OnInit {
     ) { }
 
     public ngOnInit(): void {
-        //
-        console.log(this.user);
     }
 }
