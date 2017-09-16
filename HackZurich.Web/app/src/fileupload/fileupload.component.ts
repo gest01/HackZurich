@@ -3,6 +3,7 @@ import { Component, OnInit, Inject, Input } from "@angular/core";
 import { FileUploader, FileItem, ParsedResponseHeaders } from "ng2-file-upload";
 import { IAppConfig, APP_CONFIG } from "../app.config";
 import { FirebaseService } from "../firebase.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "file-upload",
@@ -14,6 +15,7 @@ export class FileUploadComponent {
     public uploader: FileUploader;
 
     constructor(
+        private router: Router,
         private firebase: FirebaseService,
         private dataService: DataService,
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -23,7 +25,7 @@ export class FileUploadComponent {
             url: url,
         });
 
-        this.uploader.onAfterAddingFile = this.onFileAdded;
+        this.uploader.onAfterAddingFile = (file: FileItem) => this.onFileAdded(file, this.router);
         this.uploader.onSuccessItem = (item: FileItem, response: string, status: number, headers: ParsedResponseHeaders) => {
             this.createFoodEntry(+response);
         };
@@ -37,9 +39,11 @@ export class FileUploadComponent {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
     }
 
-    private onFileAdded(file: FileItem): void {
+    private onFileAdded(file: FileItem, router: Router,): void {
         file.withCredentials = false;
         file.upload();
+
+        router.navigate(["mystats"]);
     }
 
     private createFoodEntry(imageId: number) {
