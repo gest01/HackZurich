@@ -35,7 +35,6 @@ export class StatsItemComponent implements OnInit {
             }
 
             this.userValue = value.vote;
-            this.classNumber = Math.floor((this.itemScore + 9.99) / 10);
         });
 
         this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) => {
@@ -43,7 +42,8 @@ export class StatsItemComponent implements OnInit {
         });
 
         this.statsService.getUserHealthScore(this.user.uid).subscribe((userHealtScore) => {
-            this.itemScore = userHealtScore;
+            this.itemScore = Math.floor(userHealtScore * 10) / 10;
+            this.classNumber = Math.floor((this.itemScore + 9.99) / 10);
         });
 
         this.statsService.getAverageEntryScore(this.entry.$key).subscribe((stats) => {
