@@ -1,4 +1,4 @@
-<template #myPopover>
+<ng-template #myPopover>
 
     <div class="conainer">
         <div class="row">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-</template>
+</ng-template>
 
 <div class="panel panel-default stats-item color-{{ classNumber }}" *ngIf="entry.user.uid === user.uid">
     <div class="panel-body">
@@ -29,10 +29,71 @@
                                 height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="..." container="body">
                         </div>
                         <div class="col-md-10">
-                            <div class="row">
-                                <div class="col-md-8">Evaluated food score: {{entry.foodFacts.healthscore}}<br />Userscore: {{userScore}}<br /><b>Health Score:{{itemScore}}</b></div>
-                                <div class="col-md-3">
-                                    <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                            <div class="conainer">
+                                <div class="row">
+                                    <div class="col-md-10">Evaluated food score: {{entry.foodFacts.healthscore}}<br />Userscore: {{userScore}}<br
+                                        /><b>Health Score:{{itemScore}}</b></div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr/>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <table class="table table-bordered">
+                                            <th colspan="10">Google Stats:</th>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <table class="table table-bordered">
+                                            <th colspan="10">Sport Stats:</th>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered">
+                                            <th colspan="10">Nutrition Facts:</th>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                            <tr>
+                                                <td>....</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

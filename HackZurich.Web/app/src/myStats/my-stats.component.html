@@ -2,10 +2,9 @@
 
 
 <accordion *ngIf="user | async; let user;">
-    <accordion-group #group [isOpen]="status.isOpen">
+    <accordion-group #group [isOpen]="true">
         <div accordion-heading>
             My food jurnal
-            <i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
         </div>
         
         <div *ngIf="entries | async; let entries;" >
