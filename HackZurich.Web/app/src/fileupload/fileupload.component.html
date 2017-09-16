@@ -1,5 +1,5 @@
 <label *ngIf="isMobileDevice()" class="btn btn-default" for="my-file-selector">
-        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+       
         <input id="my-file-selector" ng2FileSelect [uploader]="uploader" type="file" style="display:none;">
         Take Photo
 </label>
@@ -7,14 +7,12 @@
 <label *ngIf="!isMobileDevice()" class="btn btn-default" for="my-file-selector">
         <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
         <input id="my-file-selector" ng2FileSelect [uploader]="uploader" type="file" style="display:none;">
-        Select File
+        Select Photo
 </label>
 
-<span *ngIf="uploader?.queue?.length > 0" class='label label-info' id="upload-file-info">{{  uploader.queue[0].file.name }}</span>
-
-<button *ngIf="uploader?.queue?.length > 0" class="btn btn-default" (click)="upload(uploader.queue[0])" >UPLOAD</button>
-
-{{ isMobileDevice() | json }}
-
+<!-- <span *ngIf="uploader?.queue?.length > 0" class='label label-info' id="upload-file-info">{{  uploader.queue[0].file.name }}</span> -->
 <!-- 
-<p>Queue length: {{ uploader?.queue?.length }}</p> -->
+<button *ngIf="uploader?.queue?.length > 0" class="btn btn-default" (click)="upload(uploader.queue[0])"> 
+        <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload
+</button> -->
+
