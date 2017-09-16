@@ -15,8 +15,12 @@ export class FirebaseService {
         return this.af.list(path);
     }
 
-    public create(path: string, value: any): void {
-        this.af.list(path).push(value);
+    public create(path: string, value: any): firebase.database.ThenableReference {
+        return this.af.list(path).push(value);
+    }
+
+    public createFoodEntry(entry: any): firebase.database.ThenableReference {
+        return this.create("/entries", entry);
     }
 
     public logout() {
