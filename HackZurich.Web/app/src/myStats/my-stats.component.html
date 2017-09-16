@@ -6,9 +6,11 @@
         <div accordion-heading>
             My food jurnal
         </div>
-        
-        <div *ngIf="entries | async; let entries;" >
-            <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
+
+        <div>
+            <div *ngIf="entries | async; let entries;">
+                <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
+            </div>
         </div>
     </accordion-group>
 </accordion>

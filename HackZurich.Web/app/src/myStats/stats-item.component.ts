@@ -48,7 +48,7 @@ export class StatsItemComponent implements OnInit {
         // });
 
         this.statsService.getAverageEntryScore(this.entry.$key).subscribe((stats) => {
-            this.userScore = stats.entryScore;
+            this.userScore = Math.floor(stats.entryScore * 10) / 10;
         });
     }
 

@@ -31,8 +31,22 @@
                         <div class="col-md-10">
                             <div class="conainer">
                                 <div class="row">
-                                    <div class="col-md-10">Evaluated food score: {{entry.foodFacts.healthscore}}<br />Userscore: {{userScore}}<br
-                                        /><b>Health Score:{{itemScore}}</b></div>
+                                    <div class="col-md-10">
+                                        <table class="table">
+                                            <tr>
+                                                <td>Evaluated food score:</td>
+                                                <td>{{entry.foodFacts.healthscore}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Average userrating:</td>
+                                                <td>{{ userScore }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Health Score:</b></td>
+                                                <td><b>{{itemScore}}</b></td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                     <div class="col-md-2">
                                         <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                     </div>
