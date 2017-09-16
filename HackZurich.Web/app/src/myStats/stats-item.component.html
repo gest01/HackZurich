@@ -43,7 +43,7 @@
                                             </tr>
                                             <tr>
                                                 <td><b>Health Score:</b></td>
-                                                <td><b>{{itemScore}}</b></td>
+                                                <td><b>{{ itemScore }}</b></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -75,11 +75,11 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row" *ngIf="entry.foodDetails && entry.foodDetails.length > 0">
+                                <div class="row" *ngIf="entry.foodFacts && entry.foodFacts.nutritionFacts">
                                     <div class="col-md-12">
                                         <table class="table table-bordered">
                                             <th colspan="10">Nutrition Facts:</th>
-                                            <tr *ngFor="let titem of entry.foodFacts.foodDetails[0].servings[0].text">
+                                            <tr *ngFor="let titem of entry.foodFacts.nutritionFacts.text">
                                                 <td>{{titem}}</td>
                                             </tr>
                                         </table>

@@ -10,6 +10,7 @@ import { FirebaseService } from "../firebase.service";
 })
 
 export class OverallStatsComponent implements OnInit {
+    public itemScore: number;
     @Input() public user: any;
 
     constructor(
@@ -18,5 +19,9 @@ export class OverallStatsComponent implements OnInit {
     ) { }
 
     public ngOnInit(): void {
+
+        this.statsService.getUserHealthScore(this.user.uid).subscribe((userHealtScore) => {
+            this.itemScore = Math.floor(userHealtScore * 10) / 10;
+        });
     }
 }

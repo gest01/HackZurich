@@ -1,7 +1,9 @@
 <h1>My Stats</h1>
 
+<div *ngIf="user | async; let user;">
+<overall-stats [user]="user"></overall-stats>
 
-<accordion *ngIf="user | async; let user;">
+<accordion>
     <accordion-group #group [isOpen]="true">
         <div accordion-heading>
             My food jurnal
@@ -14,3 +16,4 @@
         </div>
     </accordion-group>
 </accordion>
+</div>

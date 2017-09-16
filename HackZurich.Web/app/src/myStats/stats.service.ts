@@ -35,6 +35,7 @@ export class StatsService {
 
         const stat = {
             entryScore: 0,
+            averageUserRating : 0,
         };
 
         if (entry.votes) {
@@ -47,6 +48,7 @@ export class StatsService {
                 stat.entryScore = stat.entryScore / keys.length;
             }
         }
+        stat.averageUserRating = stat.entryScore;
 
         if (entry.foodFacts.healthscore) {
             stat.entryScore += entry.foodFacts.healthscore;
