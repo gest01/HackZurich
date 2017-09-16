@@ -31,7 +31,7 @@
                     <div class="row">
                         <nouislider class="col-md-8" [min]="0" [max]="100" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
                         <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
-                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">                            {{ entry.user.displayName }}
+                        <a href [routerLink]="['/mystats',  entry.user.uid ]"> <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">  {{ entry.user.displayName }} </a>
                         </div>
                         <div class="col-md-1">
                             <!-- <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> -->

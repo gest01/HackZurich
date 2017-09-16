@@ -1,19 +1,20 @@
-<h1>My Stats</h1>
-
 <div *ngIf="user | async; let user;">
-<overall-stats [user]="user"></overall-stats>
 
-<accordion>
-    <accordion-group #group [isOpen]="true">
-        <div accordion-heading>
-            My food journal
-        </div>
+    <h1>Health - Stats for {{ user.displayName  }}</h1>
 
-        <div>
-            <div *ngIf="entries | async; let entries;">
-                <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
+    <overall-stats [user]="user"></overall-stats>
+
+    <accordion>
+        <accordion-group #group [isOpen]="true">
+            <div accordion-heading>
+                Food journal
             </div>
-        </div>
-    </accordion-group>
-</accordion>
+
+            <div>
+                <div *ngIf="entries | async; let entries;">
+                    <stats-item *ngFor="let entry of entries" [entry]="entry" [user]="user"></stats-item>
+                </div>
+            </div>
+        </accordion-group>
+    </accordion>
 </div>

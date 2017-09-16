@@ -13,6 +13,7 @@ export class StatsItemComponent implements OnInit {
 
     public userScore: number;
     public itemScore: number;
+    public currentUser: Rx.Observable<any>;
 
     @Input() public user: any;
     @Input() public entry: any;
@@ -28,6 +29,7 @@ export class StatsItemComponent implements OnInit {
     ) { }
 
     public ngOnInit(): void {
+        this.currentUser = this.firebaseService.user();
         this.firebaseService.getUserVote(this.entry.$key, this.user).subscribe((value) => {
 
             if (!value.vote) {

@@ -54,12 +54,24 @@ export class FirebaseService {
         return this.af.object(path);
     }
 
+    public getUser(uid: string): FirebaseObjectObservable<any> {
+        return this.af.object("/users/" + uid);
+    }
+
     public logout() {
         this.afAuth.auth.signOut();
     }
 
     public login() {
-        this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result: any) => {
+            const user = {
+                uid: result.user.uid,
+                displayName: result.user.displayName,
+                avatarUrl: result.user.photoURL,
+            };
+
+            this.set("/users/" + user.uid, user);
+        });
     }
 
     public user(): Rx.Observable<any> {

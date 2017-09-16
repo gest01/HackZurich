@@ -18,71 +18,73 @@
     </div>
 </ng-template>
 
-<div class="panel panel-default stats-item color-{{ classNumber }}" *ngIf="entry.user && entry.user.uid === user.uid">
-    <div class="panel-body">
-        <div class="media">
-            <div class="media-body">
-                <div class="conainer">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave"
-                                height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="..." container="body">
-                        </div>
-                        <div class="col-md-10">
-                            <div class="conainer">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <table class="table">
-                                            <tr *ngIf="entry.foodFacts">
-                                                <td>Evaluated food score:</td>
-                                                <td>{{entry.foodFacts.healthscore}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Average userrating:</td>
-                                                <td>{{ userScore }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Health Score:</b></td>
-                                                <td><b>{{ itemScore }}</b></td>
-                                            </tr>
-                                        </table>
+<div *ngIf="currentUser | async; let currentUser;">
+    <div class="panel panel-default stats-item color-{{ classNumber }}" *ngIf="entry.user && entry.user.uid === user.uid">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-body">
+                    <div class="conainer">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave"
+                                    height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="..." container="body">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="conainer">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <table class="table">
+                                                <tr *ngIf="entry.foodFacts">
+                                                    <td>Evaluated food score:</td>
+                                                    <td>{{entry.foodFacts.healthscore}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Average userrating:</td>
+                                                    <td>{{ userScore }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Health Score:</b></td>
+                                                    <td><b>{{ itemScore }}</b></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-2" *ngIf="currentUser.uid === user.uid" > 
+                                            <button class="btn pull-right" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <button class="btn pull-right" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    <div class="row">
+                                        <hr/>
+                                        <!-- <pre>{{entry | json}}</pre> -->
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <hr/>
-                                    <!-- <pre>{{entry | json}}</pre> -->
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.google">
-                                            <th colspan="10">Google Stats:</th>
-                                            <tr>
-                                                <td>
-                                                    <span *ngFor="let gitem of entry.foodFacts.google">{{gitem.description}}, </span>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.google">
+                                                <th colspan="10">Google Stats:</th>
+                                                <tr>
+                                                    <td>
+                                                        <span *ngFor="let gitem of entry.foodFacts.google">{{gitem.description}}, </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.sports">
+                                                <th colspan="10">Sport Stats:</th>
+                                                <tr *ngFor="let titem of entry.foodFacts.sports.text">
+                                                    <td>{{titem}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.sports">
-                                            <th colspan="10">Sport Stats:</th>
-                                            <tr *ngFor="let titem of entry.foodFacts.sports.text">
-                                                <td>{{titem}}</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row" *ngIf="entry.foodFacts && entry.foodFacts.nutritionFacts">
-                                    <div class="col-md-12">
-                                        <table class="table table-bordered">
-                                            <th colspan="10">Nutrition Facts:</th>
-                                            <tr *ngFor="let titem of entry.foodFacts.nutritionFacts.text">
-                                                <td>{{titem}}</td>
-                                            </tr>
-                                        </table>
+                                    <div class="row" *ngIf="entry.foodFacts && entry.foodFacts.nutritionFacts">
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered">
+                                                <th colspan="10">Nutrition Facts:</th>
+                                                <tr *ngFor="let titem of entry.foodFacts.nutritionFacts.text">
+                                                    <td>{{titem}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

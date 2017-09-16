@@ -39,7 +39,7 @@ export class FileUploadComponent {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
     }
 
-    private onFileAdded(file: FileItem, router: Router,): void {
+    private onFileAdded(file: FileItem, router: Router): void {
         file.withCredentials = false;
         file.upload();
 
