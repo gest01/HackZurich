@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit, ElementRef, ViewChild } from "@angular/core";
 import { FirebaseService } from "./firebase.service";
-import * as $ from "jquery";
 
 @Component({
     selector: "detail-item",

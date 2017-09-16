@@ -23,7 +23,7 @@ export class FileUploadComponent {
             url: url,
         });
 
-        this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+        this.uploader.onAfterAddingFile = this.onFileAdded;
         this.uploader.onSuccessItem = (item: FileItem, response: string, status: number, headers: ParsedResponseHeaders) => {
             this.createFoodEntry(+response);
         };
@@ -31,6 +31,15 @@ export class FileUploadComponent {
 
     public upload(fileitem: any): void {
         fileitem.upload();
+    }
+
+    public isMobileDevice(): boolean {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    private onFileAdded(file: FileItem): void {
+        file.withCredentials = false;
+        file.upload();
     }
 
     private createFoodEntry(imageId: number) {
