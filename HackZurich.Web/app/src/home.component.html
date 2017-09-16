@@ -3,13 +3,6 @@
 
 <div *ngIf="(user | async); let user;">
     <file-upload [user]="user"></file-upload>
-
-    <!-- <take-picture></take-picture>
-
-    <input type="file" accept="image/*;capture=camera"> -->
-    
-
-    <!-- <button class="btn btn-primary" (click)="createEntry(user)" >create</button> -->
     <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user" ></detail-item>    
 </div>
 

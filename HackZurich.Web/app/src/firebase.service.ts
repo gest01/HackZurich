@@ -7,12 +7,9 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class FirebaseService {
 
-    private currentUser: any;
-
     constructor(
         private afAuth: AngularFireAuth,
         private af: AngularFireDatabase) {
-        this.user().subscribe((user) => this.currentUser = user);
     }
 
     public list(path: string): FirebaseListObservable<any[]> {
@@ -30,18 +27,20 @@ export class FirebaseService {
     public set(path: string, value: any): firebase.Promise<void> {
         return this.af.object(path).set(value);
     }
-    public updateUserVote(entrykey: string, userValue: any): firebase.Promise<void> {
+    public updateUserVote(entrykey: string, userValue: any, user: any): firebase.Promise<void> {
         const voteObject: any = {
             vote: userValue,
-            avatarUrl: this.currentUser.photoURL,
-            displayName: this.currentUser.displayName,
-            uid: this.currentUser.uid,
+            avatarUrl: user.photoURL,
+            displayName: user.displayName,
+            uid: user.uid,
         };
-        return this.set("/entries/" + entrykey + "/votes/" + this.currentUser.uid, voteObject);
+        return this.set("/entries/" + entrykey + "/votes/" + user.uid, voteObject);
     }
-    public getUserVote(entrykey: string): FirebaseObjectObservable<any> {
-        return this.get("/entries/" + entrykey + "/votes/" + this.currentUser.uid);
+
+    public getUserVote(entrykey: string, user: any): FirebaseObjectObservable<any> {
+        return this.get("/entries/" + entrykey + "/votes/" + user.uid);
     }
+
     public getUserVotes(entrykey: string): FirebaseListObservable<any[]> {
         return this.list("/entries/" + entrykey + "/votes/");
     }

@@ -19,12 +19,12 @@ export class DetailComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        this.firebaseService.getUserVote(this.entry.$key).defaultIfEmpty({vote: 50}).subscribe((userVote) =>  setTimeout(() =>  this.userValue = userVote.vote));
+        this.firebaseService.getUserVote(this.entry.$key, this.user).defaultIfEmpty({vote: 50}).subscribe((userVote) =>  setTimeout(() =>  this.userValue = userVote.vote));
         this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) =>  setTimeout(() =>  this.userVotes = votes));
     }
 
     public sliderChanged(event: any): void {
-        this.firebaseService.updateUserVote(this.entry.$key, this.userValue).then((f) => {
+        this.firebaseService.updateUserVote(this.entry.$key, this.userValue, this.user).then((f) => {
             console.log("saved to fb");
         });
     }
