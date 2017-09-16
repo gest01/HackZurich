@@ -9,7 +9,7 @@
     
 
     <!-- <button class="btn btn-primary" (click)="createEntry(user)" >create</button> -->
-    <detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>    
+    <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user" ></detail-item>    
 </div>
 
 

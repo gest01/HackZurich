@@ -8,16 +8,15 @@ import * as $ from "jquery";
 })
 
 export class DetailComponent implements AfterViewInit {
-    @Input()
-    public entry: any;
+    @Input() public entry: any;
+    @Input() public user: any;
+    
     public userValue: any;
-    private user: any;
 
     constructor(
         private firebaseService: FirebaseService,
     ) {
         this.userValue = 50;
-        this.firebaseService.user().subscribe((user) => this.user = user);
     }
 
     public ngAfterViewInit() {
