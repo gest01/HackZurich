@@ -42,9 +42,9 @@ export class StatsItemComponent implements OnInit {
         });
 
         this.statsService.getAverageEntryScore(this.entry.$key).subscribe((stats) => {
+            this.userScore = Math.floor(stats.averageUserRating * 10) / 10;
             this.itemScore = Math.floor(stats.entryScore * 10) / 10;
             this.classNumber = Math.floor((this.itemScore + 9.99) / 10);
-            this.userScore = Math.floor(stats.averageUserRating * 10) / 10;
         });
     }
 
