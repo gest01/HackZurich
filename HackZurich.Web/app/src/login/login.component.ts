@@ -1,9 +1,8 @@
 
 import { Component, OnInit } from "@angular/core";
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase/app';
-import "../custom.css";
+import { AngularFireAuth } from "angularfire2/auth";
+import { Observable } from "rxjs/Observable";
+import * as firebase from "firebase/app";
 import { LoginService } from "./login.service";
 
 @Component({
@@ -15,13 +14,13 @@ import { LoginService } from "./login.service";
 })
 
 export class LoginComponent {
-    user: Observable<firebase.User>;
+    public user: Observable<firebase.User>;
 
     constructor(public auth: LoginService) {
         this.user = auth.user;
     }
 
-    login() {
+    public login() {
         this.auth.login();
     }
 }

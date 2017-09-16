@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+
 import "../custom.css";
-import { LoginService } from "../login/login.service";
+import { LoginService } from "./login/login.service";
 import { Observable } from "rxjs";
-import * as firebase from 'firebase/app';
+import * as firebase from "firebase/app";
 
 @Component({
     selector: "my-app",
@@ -16,7 +17,7 @@ export class AppComponent {
         this.user = auth.user;
     }
 
-    logout() {
+    public logout() {
         this.auth.logout();
     }
 }

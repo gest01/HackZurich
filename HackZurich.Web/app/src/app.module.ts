@@ -9,15 +9,14 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home.component";
 import { APP_CONFIG, AppConfig } from "./app.config";
 import { DataService } from "./data.service";
-import { LioComponent } from "./lio/lio.component";
 import { FirebaseService } from "./firebase.service";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { DetailComponent } from "./detail.component";
-import { LoginComponent } from "../login/login.component";
-import { LoginService } from "../login/login.service";
+import { LoginComponent } from "./login/login.component";
+import { LoginService } from "./login/login.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -41,7 +40,6 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    LioComponent,
     DetailComponent,
     LoginComponent,
   ],
