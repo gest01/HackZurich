@@ -11,13 +11,11 @@ export class DetailComponent implements AfterViewInit {
     @Input() public entry: any;
     @Input() public user: any;
     
-    public userValue: any;
+    public userValue: number = 0;
 
     constructor(
         private firebaseService: FirebaseService,
     ) {
-        this.userValue = 50;
-        this.firebaseService.user().subscribe((user) => this.user = user);
     }
 
     public ngAfterViewInit() {
