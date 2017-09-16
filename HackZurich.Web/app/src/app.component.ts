@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 
 import "../custom.css";
+
 import { LoginService } from "./login/login.service";
 import { Observable } from "rxjs";
-import * as firebase from "firebase/app";
 
 @Component({
     selector: "my-app",
@@ -11,7 +11,7 @@ import * as firebase from "firebase/app";
 })
 export class AppComponent {
 
-    public user: Observable<firebase.User>;
+    public user: Observable<any>;
 
     constructor(private auth: LoginService) {
         this.user = auth.user;

@@ -10,5 +10,7 @@ import "@angular/forms";
 import "rxjs";
 import "jquery";
 
+import "font-awesome/css/font-awesome.css";
+
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";

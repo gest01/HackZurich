@@ -8,7 +8,7 @@ import * as Rx from "rxjs";
     templateUrl: "home.component.html",
 })
 export class HomeComponent implements OnInit {
-    public user: any;
+    public user: Rx.Observable<any>;
     public entries: FirebaseListObservable<any[]>;
 
     constructor(
@@ -17,14 +17,17 @@ export class HomeComponent implements OnInit {
 
     public ngOnInit(): void {
         this.entries = this.firebase.list("/entries");
-        this.firebase.user().subscribe( (user) => this.user = user );
+        this.user = this.firebase.user();
     }
 
     public createEntry(user: any): void {
         const val = {
             imageUrl: "http://www.google.com",
+
             healthscore: 12,
-            user: user.uid,
+            userUid: user.uid,
+            userDisplayName : user.displayName,
+
             google: {
                 value1: 1,
                 value2: "asdsd",

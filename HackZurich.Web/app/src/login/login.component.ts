@@ -8,11 +8,10 @@ import { LoginService } from "./login.service";
 @Component({
     selector: "login",
     template: `
-    <div><pre> {{ (user | async) | json }} </pre></div>
-    <button *ngIf="!(user | async)" (click)="login()">Login with Google</button>
+    <button *ngIf="!(user | async)" class="btn btn-default" (click)="login()"> <i class="fa fa-google" aria-hidden="true"></i>
+    Login with Google</button>
     `,
 })
-
 export class LoginComponent {
     public user: Observable<firebase.User>;
 

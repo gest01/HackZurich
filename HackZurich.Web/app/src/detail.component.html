@@ -9,9 +9,8 @@
             <div class="media-body">
                 <button class="btn btn-default" (click)="voteUp(entry)"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
                 <button class="btn btn-default" (click)="voteDown(entry)"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+                <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
             </div>
         </div>
     </div>
 </div>
-
-<pre> {{ entry | json }}  </pre>

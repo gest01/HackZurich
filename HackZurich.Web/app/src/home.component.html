@@ -1,6 +1,10 @@
 
 <login></login>
 
-<detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>
+<div *ngIf="(user | async)">
+    <detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>    
+    <button class="btn btn-primary" (click)="createEntry(user)" >create</button>
+</div>
 
-<button class="btn btn-primary" (click)="createEntry(user)" >create</button>
+
+

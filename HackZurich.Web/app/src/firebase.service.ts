@@ -30,4 +30,8 @@ export class FirebaseService {
     public user(): Rx.Observable<any> {
         return this.afAuth.authState;
     }
+
+    public deleteItem(path: string) {
+        this.af.object(path).remove();
+    }
 }
