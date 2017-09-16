@@ -3,9 +3,11 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { HomeComponent } from "./home.component";
 import { MyStatsComponent } from "./myStats/my-stats.component";
+import { RatingsComponent } from "./ratings/ratings.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "ratings", component: RatingsComponent },
     { path: "mystats", component: MyStatsComponent },
     { path: "home", component: HomeComponent },
 ];
