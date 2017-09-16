@@ -10,7 +10,7 @@ import { LoginService } from "./login.service";
     selector: "login",
     template: `
     <div><pre> {{ (user | async) | json }} </pre></div>
-    <button (click)="login()">Login with Google</button>
+    <button *ngIf="!(user | async)" (click)="login()">Login with Google</button>
     `,
 })
 
