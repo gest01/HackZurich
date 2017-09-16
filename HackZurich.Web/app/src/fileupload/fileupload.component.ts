@@ -8,7 +8,7 @@ import { IAppConfig, APP_CONFIG } from "../app.config";
     templateUrl: "fileupload.component.html",
 })
 
-export class FileUploadComponent implements OnInit {
+export class FileUploadComponent  {
 
     public uploader: FileUploader;
 
@@ -16,10 +16,11 @@ export class FileUploadComponent implements OnInit {
         private dataService: DataService,
         @Inject(APP_CONFIG) private config: IAppConfig,
     ) {
-        this.uploader = new FileUploader({ url: "http://www.google.dch" });
+        this.uploader = new FileUploader({ url:  this.config.apiEndpoint + "/api/cleanfood/image/uploadAndAnalyze" });
     }
 
-    public ngOnInit() {
-        console.log(this.uploader);
+    public upload(fileitem: any): void {
+        fileitem.upload();
+        console.log(fileitem);
     }
 }
