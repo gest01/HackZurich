@@ -33,6 +33,10 @@ export class FileUploadComponent {
         fileitem.upload();
     }
 
+    public isMobileDevice(): boolean {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+    }
+
     private createFoodEntry(imageId: number) {
         const entry = {
             imageUrl: this.config.apiEndpoint + "/api/cleanfood/image/" + imageId,
