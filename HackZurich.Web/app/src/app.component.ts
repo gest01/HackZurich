@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import "../custom.css";
+import "../node_modules/nouislider/distribute/nouislider.min.css";
 
 import { LoginService } from "./login/login.service";
 import { Observable } from "rxjs";

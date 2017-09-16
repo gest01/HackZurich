@@ -19,7 +19,7 @@ import { LoginComponent } from "./login/login.component";
 import { LoginService } from "./login/login.service";
 import { FileUploadModule } from "ng2-file-upload";
 import { FileUploadComponent } from "./fileupload/fileupload.component";
-
+import { NouisliderModule } from "ng2-nouislider";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -40,6 +40,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AppRoutingModule,
     FileUploadModule,
+    NouisliderModule,
   ],
   declarations: [
     AppComponent,
