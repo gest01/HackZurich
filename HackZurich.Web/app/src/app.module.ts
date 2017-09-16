@@ -26,6 +26,7 @@ import { HTTP_INTERCEPTOR } from "./http-interceptor";
 import { PopoverModule, AccordionModule  } from "ngx-bootstrap";
 import { StatsItemComponent } from "./myStats/stats-item.component";
 import { OverallStatsComponent } from "./myStats/overall-stats.component";
+import { OnlyMinePipe } from "./only-mine.pipe";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -60,6 +61,7 @@ export const firebaseConfig = {
     FileUploadComponent,
     StatsItemComponent,
     OverallStatsComponent,
+    OnlyMinePipe,
   ],
   providers: [
     DataService,
