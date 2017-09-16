@@ -1,7 +1,7 @@
 
 <login></login>
 
-<div *ngIf="(user | async)">
+<div *ngIf="(user | async); let user;">
     <file-upload></file-upload>
     <button class="btn btn-primary" (click)="createEntry(user)" >create</button>
     

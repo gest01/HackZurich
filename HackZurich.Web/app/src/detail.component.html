@@ -11,6 +11,10 @@
                 <button class="btn btn-default" (click)="voteDown(entry)"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
                 <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
             </div>
+
+            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
+            
+
         </div>
     </div>
 </div>

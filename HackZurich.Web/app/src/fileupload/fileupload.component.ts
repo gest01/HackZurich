@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { DataService } from "../data.service";
+import { Component, OnInit, Inject } from "@angular/core";
 import { FileUploader } from "ng2-file-upload";
+import { IAppConfig, APP_CONFIG } from "../app.config";
 
 @Component({
     selector: "file-upload",
@@ -8,9 +10,16 @@ import { FileUploader } from "ng2-file-upload";
 
 export class FileUploadComponent implements OnInit {
 
-    public uploader: FileUploader = new FileUploader({ url: "http://www.google.dch" });
+    public uploader: FileUploader;
 
-    constructor() { }
+    constructor(
+        private dataService: DataService,
+        @Inject(APP_CONFIG) private config: IAppConfig,
+    ) {
+        this.uploader = new FileUploader({ url: "http://www.google.dch" });
+    }
 
-    ngOnInit() { }
+    public ngOnInit() {
+        console.log(this.uploader);
+    }
 }

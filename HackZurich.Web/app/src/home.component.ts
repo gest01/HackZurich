@@ -25,8 +25,11 @@ export class HomeComponent implements OnInit {
             imageUrl: "http://www.google.com",
 
             healthscore: 12,
-            userUid: user.uid,
-            userDisplayName : user.displayName,
+            user: {
+                uid : user.uid,
+                displayName : user.displayName,
+                avatarUrl : user.photoURL,
+            },
 
             google: {
                 value1: 1,
