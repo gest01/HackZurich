@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <table class="table">
-                                            <tr>
+                                            <tr *ngIf="entry.foodFacts">
                                                 <td>Evaluated food score:</td>
                                                 <td>{{entry.foodFacts.healthscore}}</td>
                                             </tr>

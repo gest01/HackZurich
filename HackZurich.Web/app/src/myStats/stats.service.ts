@@ -50,7 +50,7 @@ export class StatsService {
         }
         stat.averageUserRating = stat.entryScore;
 
-        if (entry.foodFacts.healthscore) {
+        if (entry.foodFacts && entry.foodFacts.healthscore) {
             stat.entryScore += entry.foodFacts.healthscore;
             stat.entryScore = stat.entryScore / 2;
         }
