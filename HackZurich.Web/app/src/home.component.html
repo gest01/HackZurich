@@ -3,7 +3,8 @@
 
 <div *ngIf="(user | async); let user;">
     <file-upload [user]="user"></file-upload>
-    <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user" ></detail-item>    
+    <br/>
+    <detail-item *ngFor="(let entry of entries | async) | " [entry]="entry" [user]="user" ></detail-item>    
 </div>
 
 
