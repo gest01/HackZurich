@@ -1,25 +1,35 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, AfterViewInit, ElementRef, ViewChild } from "@angular/core";
 import { FirebaseService } from "./firebase.service";
+import * as $ from "jquery";
 
 @Component({
     selector: "detail-item",
     templateUrl: "detail.component.html",
 })
 
-export class DetailComponent {
-    @Input() public entry: any;
+export class DetailComponent implements AfterViewInit {
+    @Input()
+    public entry: any;
     public userValue: any;
+    private user: any;
 
     constructor(
         private firebaseService: FirebaseService,
     ) {
         this.userValue = 50;
+        this.firebaseService.user().subscribe((user) => this.user = user);
     }
 
-    public voteUp(entry: any): void {
+    public ngAfterViewInit() {
+        // set background styles??
     }
 
-    public voteDown(entry: any): void {
+    public sliderChanged(event: any): void {
+        const voteObject: any = {
+            vote: this.userValue,
+        };
+        console.log("voted: ", voteObject);
+        this.firebaseService.set("/entries/" + this.entry.$key + "/votes/" + this.user.uid, voteObject);
     }
 
     public delete(entry: any): void {

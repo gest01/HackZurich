@@ -23,6 +23,10 @@ export class FirebaseService {
         return this.create("/entries", entry);
     }
 
+    public set(path: string, value: any): void {
+        this.af.object(path).set(value);
+    }
+
     public logout() {
         this.afAuth.auth.signOut();
     }
