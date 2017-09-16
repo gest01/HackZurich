@@ -10,25 +10,11 @@ export class FirebaseService {
         private af: AngularFireDatabase) {
     }
 
-    public test(path: string): FirebaseListObservable<any[]> {
+    public list(path: string): FirebaseListObservable<any[]> {
         return this.af.list(path);
     }
 
-    public initializeFirebase(): void {
-        // const config = {
-        //     apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
-        //     authDomain: "hackzurich2017.firebaseapp.com",
-        //     databaseURL: "https://hackzurich2017.firebaseio.com",
-        //     projectId: "hackzurich2017",
-        //     storageBucket: "hackzurich2017.appspot.com",
-        //     messagingSenderId: "885304700993",
-        // };
-
-        // console.log("init firebase..", config);
-        // firebase.initializeApp(config);
+    public create(path: string, value: any): void {
+        this.af.list(path).push(value);
     }
-
-    // public getFirebase(path: string): firebase.database.Reference {
-    //     return firebase.database().ref(path);
-    // }
 }

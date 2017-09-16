@@ -6,15 +6,15 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 
 export class DetailComponent {
-    @Input() public item: any;
+    @Input() public entry: any;
 
     constructor() { }
 
-    public voteUp(item: any): void {
-        console.log("voteUp...", item);
+    public voteUp(entry: any): void {
+        console.log("voteUp...", entry);
     }
 
-    public voteDown(item: any): void {
-        console.log("voteDown...", item);
+    public voteDown(entry: any): void {
+        console.log("voteDown...", entry);
     }
 }

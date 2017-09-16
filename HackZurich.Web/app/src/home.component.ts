@@ -13,16 +13,37 @@ import * as firebase from 'firebase/app';
     templateUrl: "home.component.html",
 })
 export class HomeComponent implements OnInit {
-    public data: FirebaseListObservable<any[]>;
+    
     public user: Observable<firebase.User>;
+    public entries: FirebaseListObservable<any[]>;
 
     constructor(
         private firebase: FirebaseService,
         private auth: LoginService) {
     }
     public ngOnInit(): void {
-        this.data = this.firebase.test("/hello");
+        this.entries = this.firebase.list("/entries");
         this.user = this.auth.user;
+
+    }
+
+    public createEntry(): void {
+        const val = {
+            imageUrl: "http://www.google.com",
+            healthscore: 12,
+            user: "james bond",
+            google: {
+                value1: 1,
+                value2: "asdsd",
+            },
+            nutrition: {
+                value1: 1,
+                value2: "asdsd",
+            },
+        };
+
+        this.firebase.create("/entries", val);
+      
     }
 
 }
