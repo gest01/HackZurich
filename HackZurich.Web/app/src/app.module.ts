@@ -21,7 +21,7 @@ import { FileUploadModule } from "ng2-file-upload";
 import { FileUploadComponent } from "./fileupload/fileupload.component";
 import { NouisliderModule } from "ng2-nouislider";
 import { PopoverModule } from "ngx-popover";
-import { TakePictureComponent} from "./camera/takepicture.component";
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -51,7 +51,6 @@ export const firebaseConfig = {
     DetailComponent,
     LoginComponent,
     FileUploadComponent,
-    TakePictureComponent,
   ],
   providers: [
     DataService,
