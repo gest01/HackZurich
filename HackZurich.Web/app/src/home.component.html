@@ -1,10 +1,10 @@
 
-<login></login>
 
+<img class="img-responsive center-block" width="250px" src="https://www.css.ch/de/home/ueber_uns/medien_publikationen/medien/download_bilder/_jcr_content/par/twocolumns_420484561/right/textlinkimage_973244170/image.img.jpg/Logo%2BCSS%2BVersicherung%2B-%2BEnglisch%2B%2528JPG%2529.jpg">
+
+<br />
+<login></login>
 <div *ngIf="(user | async); let user;">
     <file-upload [user]="user"></file-upload>
-    <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user" ></detail-item>    
+    <!-- <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user"></detail-item>  -->
 </div>
-
-
-

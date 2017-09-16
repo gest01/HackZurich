@@ -8,7 +8,7 @@ import { LoginService } from "./login.service";
 @Component({
     selector: "login",
     template: `
-    <button *ngIf="!(user | async)" class="btn btn-default" (click)="login()"> <i class="fa fa-google" aria-hidden="true"></i>
+    <button *ngIf="!(user | async)" class="btn btn-default center-block btn-lg" (click)="login()"> <i class="fa fa-google" aria-hidden="true"></i>
     Login with Google</button>
     `,
 })
