@@ -45,7 +45,9 @@ export class FileUploadComponent {
 
         this.firebase.createFoodEntry(entry).then((f) => {
             const entryId = f.key;
-            this.dataService.notifyProcess(entryId, imageId);
+            this.dataService.notifyProcess(entryId, imageId).subscribe((f) => {
+                console.log("notifyProcess ", f);
+            });
         });
     }
 }
