@@ -10,6 +10,7 @@ import { FirebaseObjectObservable } from "angularfire2/database";
 
 export class DetailComponent {
     @Input() public user: any;
+    public classNumber: number;
 
     public userValue: any = 0;
     public userVotes: any[];
@@ -19,6 +20,7 @@ export class DetailComponent {
 
         this.firebaseService.getUserVote(entry.$key, this.user).defaultIfEmpty({ vote: 50 }).subscribe((value) => {
             this.userValue = value.vote;
+            this.classNumber = Math.floor((this.userValue + 9.99) / 10);
         });
 
         this.firebaseService.getUserVotes(entry.$key).defaultIfEmpty([]).subscribe((votes) => {

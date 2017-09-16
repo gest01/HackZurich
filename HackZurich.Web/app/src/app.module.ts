@@ -23,7 +23,6 @@ import { NouisliderModule } from "ng2-nouislider";
 import { PopoverModule } from "ngx-popover";
 import { NgLoadingBarModule } from "ng-loading-bar";
 import { HTTP_INTERCEPTOR } from "./http-interceptor";
-import { BgColorsService } from "./bgcolors.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -59,7 +58,6 @@ export const firebaseConfig = {
     DataService,
     FirebaseService,
     LoginService,
-    BgColorsService,
     HTTP_INTERCEPTOR,
     { provide: APP_CONFIG, useValue: AppConfig },
   ],
