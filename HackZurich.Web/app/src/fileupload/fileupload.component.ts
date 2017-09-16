@@ -34,9 +34,8 @@ export class FileUploadComponent {
     }
 
     private createFoodEntry(imageId: number) {
-        const imageUrl = this.config.apiEndpoint + "/api/cleanfood/image/" + imageId;
         const entry = {
-            imageUrl: imageUrl,
+            imageUrl: this.config.apiEndpoint + "/api/cleanfood/image/" + imageId,
             user: {
                 uid: this.user.uid,
                 displayName: this.user.displayName,
@@ -46,7 +45,7 @@ export class FileUploadComponent {
 
         this.firebase.createFoodEntry(entry).then((f) => {
             const entryId = f.key;
-            this.dataService.notifyProcess(entryId, imageUrl);
+            this.dataService.notifyProcess(entryId, imageId);
         });
     }
-} 
+}

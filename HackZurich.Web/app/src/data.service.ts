@@ -10,9 +10,9 @@ export class DataService {
         @Inject(APP_CONFIG) private config: IAppConfig,
         private http: Http) { }
 
-    public notifyProcess(entryId: string, imageUrl: string): Rx.Observable<any> {
-        const apiUrl = this.config.apiEndpoint + "/api/";
-        return Rx.Observable.of({});
+    public notifyProcess(entryId: string, imageId: number): Rx.Observable<any> {
+        const apiUrl = this.config.apiEndpoint + "/api/processImage/" + entryId + "/" + imageId;
+        return this.http.post( apiUrl, {});
     }
 
     public getPeople(): Rx.Observable<any[]> {
