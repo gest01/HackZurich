@@ -1,11 +1,17 @@
 <popover-content #myPopover title="User Ratings" placement="auto right" [animation]="true" [closeOnMouseOutside]="true" [closeOnClickOutside]="true">
-    <div class="conainer" width="400px">
-        <div *ngIf="userVotes && userVotes.lenght > 0">Currently no Uservotes.</div>
+
+    <div class="conainer">
+        <div class="row">
+            <img class="popover-image" max-height="200" width="272" src="{{ entry.imageUrl}}" alt="...">
+        </div>
+        <div class="row" *ngIf="userVotes && userVotes.lenght > 0">Currently no Uservotes.</div>
         <div class="row" *ngFor="let item of userVotes; let i = index">
             <div class="col-md-8 detail-user" *ngIf="entry && entry.user">
                 <img src="{{ item.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> <span class="nowrap">{{ item.displayName }}</span>
             </div>
-            <div class="col-md-4">{{ item.vote }}</div>
+            <div class="col-md-4">
+                <div class="popover-col-text">{{ item.vote }}</div>
+            </div>
         </div>
     </div>
 </popover-content>
@@ -15,7 +21,7 @@
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                    <img class="media-object img-circle" [popover]="myPopover" height="42" width="42" src="{{ entry.imageUrl}}" alt="...">
+                    <img class="media-object img-circle" [popover]="myPopover" [popoverOnHover]="true" height="42" width="42" src="{{ entry.imageUrl}}" alt="...">
                 </a>
             </div>
             <div class="media-body">
@@ -23,7 +29,7 @@
                     <div class="row">
                         <nouislider class="col-md-8" [min]="0" [max]="100" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
                         <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
-                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
+                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">                            {{ entry.user.displayName }}
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
