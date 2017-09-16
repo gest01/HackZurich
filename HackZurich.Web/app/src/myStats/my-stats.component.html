@@ -14,6 +14,6 @@
             My food jurnal
             <i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
         </div>
-        <stats-item></stats-item> 
+        <stats-item *ngFor="let entry of (entries | async | onlyMine); " [entry]="entry" [user]="user" ></stats-item> 
     </accordion-group>
 </accordion>

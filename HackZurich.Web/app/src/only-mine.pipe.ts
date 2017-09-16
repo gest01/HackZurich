@@ -10,7 +10,8 @@ export class OnlyMinePipe implements PipeTransform {
     firebase.user().subscribe((user) => this.userId = user.uid);
   }
 
-  public transform(allHeroes: any[]) {
-    return allHeroes.filter((item) => item.uid === this.userId);
+  public transform(allItems: any[]) {
+    console.log(this.userId);
+    return allItems.filter((item) => item.uid === this.userId);
   }
 }

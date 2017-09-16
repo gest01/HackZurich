@@ -1,4 +1,4 @@
-<template #myPopover>
+<ng-template #myPopover>
 
     <div class="conainer">
         <div class="row">
@@ -16,20 +16,20 @@
             </div>
         </div>
     </div>
-</template>
+</ng-template>
 
 <div class="panel panel-default color-{{ classNumber }}">
     <div class="panel-body">
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                            <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
-                        </a>
+                    <img class="media-object img-circle" [popover]="myPopover" popoverTitle="User Ratings" placement="right" triggers="mouseenter:mouseleave" height="42" width="42" src="{{ entry.imageThumbnailUrl}}" alt="...">
+                </a>
             </div>
             <div class="media-body">
                 <div class="conainer">
                     <div class="row">
-                        <nouislider class="col-md-8" [min]="0" [max]="100" [disabled]="entry.user.uid === user.uid" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
+                        <nouislider class="col-md-8" [min]="0" [max]="100" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
                         <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
                             <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle">                            {{ entry.user.displayName }}
                         </div>
@@ -40,4 +40,4 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
