@@ -1,3 +1,11 @@
+<style> 
+        .c1 div.noUi-base {background-color: rgb(255, 0, 0);}   /* red */
+        .c2 {background-color: rgb(0, 255, 0);}   /* green */
+        .c3 {background-color: rgb(0, 0, 255);}   /* blue */   
+        #slider .noUi-base {
+    background: yellow;
+}
+    </style>
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="media">
@@ -10,8 +18,8 @@
                 <div class="conainer">
                     <div class="row">
                         
-                        <nouislider class="col-md-8" [connect]="true" [min]="0" [max]="100" [(ngModel)]="userValue"></nouislider>
-                        <div class="col-md-3 detail-user">
+                        <nouislider id="slider" class="col-md-8 c1" [connect]="true" [min]="0" [max]="100" [(ngModel)]="userValue" (ngModelChange)="sliderChanged($event)"></nouislider>
+                        <div class="col-md-3 detail-user" *ngIf="entry && entry.user">
                             <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
                         </div>
                         <div class="col-md-1">
