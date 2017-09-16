@@ -1,1 +1,3 @@
-<detail-item *ngFor="let item of data | async" [item]="item"></detail-item>
+<detail-item *ngFor="let entry of entries | async" [entry]="entry"></detail-item>
+
+<button class="btn btn-primary" (click)="createEntry()" >create</button>
