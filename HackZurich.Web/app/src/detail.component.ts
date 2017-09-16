@@ -33,7 +33,6 @@ export class DetailComponent implements AfterViewInit {
     }
 
     public delete(entry: any): void {
-        console.log("delete...", entry);
         this.firebaseService.deleteItem("/entries/" + entry.$key);
     }
 }

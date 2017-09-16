@@ -5,4 +5,7 @@
     </label>
 <span *ngIf="uploader?.queue?.length > 0" class='label label-info' id="upload-file-info">{{  uploader.queue[0].file.name }}</span>
 
-<p>Queue length: {{ uploader?.queue?.length }}</p>
+<button *ngIf="uploader?.queue?.length > 0" class="btn btn-default" (click)="upload(uploader.queue[0])" >UPLOAD</button>
+
+<!-- 
+<p>Queue length: {{ uploader?.queue?.length }}</p> -->

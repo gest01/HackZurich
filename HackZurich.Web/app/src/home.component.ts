@@ -23,21 +23,22 @@ export class HomeComponent implements OnInit {
     public createEntry(user: any): void {
         const val = {
             imageUrl: "http://www.google.com",
-
-            healthscore: 12,
             user: {
-                uid : user.uid,
-                displayName : user.displayName,
-                avatarUrl : user.photoURL,
+                uid: user.uid,
+                displayName: user.displayName,
+                avatarUrl: user.photoURL,
             },
 
-            google: {
-                value1: 1,
-                value2: "asdsd",
-            },
-            nutrition: {
-                value1: 1,
-                value2: "asdsd",
+            foodFacts: {
+                healthscore: 12,
+                google: {
+                    value1: 1,
+                    value2: "asdsd",
+                },
+                nutritionFacts: {
+                    value1: 1,
+                    value2: "asdsd",
+                },
             },
         };
 
