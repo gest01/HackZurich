@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import * as Rx from "rxjs";
 import { FirebaseObjectObservable } from "angularfire2/database";
 import { FirebaseService } from "../firebase.service";
+import { StatsService } from "./stats.service";
 
 @Component({
     selector: "stats-item",
@@ -21,6 +22,7 @@ export class StatsItemComponent implements OnInit {
 
     constructor(
         private firebaseService: FirebaseService,
+        private statsService: StatsService,
     ) { }
 
     public ngOnInit(): void {
@@ -36,6 +38,10 @@ export class StatsItemComponent implements OnInit {
 
         this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) => {
             this.userVotes = votes;
+        });
+
+        this.statsService.getDetailStats(this.entry.$key, this.user.uid).subscribe((stats) => {
+            console.log("YES!!!", stats);
         });
     }
 
