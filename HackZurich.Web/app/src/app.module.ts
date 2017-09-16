@@ -15,6 +15,7 @@ import { FirebaseService } from "./firebase.service";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { DetailComponent } from "./detail.component";
 import { LoginComponent } from "../login/login.component";
 import { LoginService } from "../login/login.service";
 
@@ -41,6 +42,7 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     LioComponent,
+    DetailComponent,
     LoginComponent,
   ],
   providers: [
