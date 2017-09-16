@@ -9,8 +9,9 @@ import { FirebaseService } from "./firebase.service";
 export class DetailComponent implements AfterViewInit {
     @Input() public entry: any;
     @Input() public user: any;
-    
+
     public userValue: number = 0;
+    public userVotes: any[];
 
     constructor(
         private firebaseService: FirebaseService,
@@ -19,6 +20,7 @@ export class DetailComponent implements AfterViewInit {
 
     public ngAfterViewInit() {
         this.firebaseService.getUserVote(this.entry.$key).defaultIfEmpty({vote: 50}).subscribe((userVote) =>  setTimeout(() =>  this.userValue = userVote.vote));
+        this.firebaseService.getUserVotes(this.entry.$key).defaultIfEmpty([]).subscribe((votes) =>  setTimeout(() =>  this.userVotes = votes));
     }
 
     public sliderChanged(event: any): void {
