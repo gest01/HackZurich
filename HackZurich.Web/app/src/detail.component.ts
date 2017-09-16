@@ -10,26 +10,21 @@ import * as $ from "jquery";
 export class DetailComponent implements AfterViewInit {
     @Input()
     public entry: any;
-    public userValue: any;
-    private user: any;
+    public userValue: any = 0;
 
     constructor(
         private firebaseService: FirebaseService,
     ) {
-        this.userValue = 50;
-        this.firebaseService.user().subscribe((user) => this.user = user);
     }
 
     public ngAfterViewInit() {
-        // set background styles??
+        this.firebaseService.getUserVote(this.entry.$key).defaultIfEmpty({vote: 50}).subscribe((userVote) => this.userValue = userVote.vote);
     }
 
     public sliderChanged(event: any): void {
-        const voteObject: any = {
-            vote: this.userValue,
-        };
-        console.log("voted: ", voteObject);
-        this.firebaseService.set("/entries/" + this.entry.$key + "/votes/" + this.user.uid, voteObject);
+        this.firebaseService.updateUserVote(this.entry.$key, this.userValue).then((f) => {
+            console.log("saved to fb");
+        });
     }
 
     public delete(entry: any): void {
