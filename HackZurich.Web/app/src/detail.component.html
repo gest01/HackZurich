@@ -3,17 +3,24 @@
         <div class="media">
             <div class="media-left">
                 <a href="#">
-                    <img class="media-object img-circle" height="42" width="42" src="http://hackzurich-api.azurewebsites.net/api/cleanfood/image/1" alt="...">
+                    <img class="media-object img-circle" height="42" width="42" src="{{ entry.imageUrl}}" alt="...">
                 </a>
             </div>
             <div class="media-body">
-                <button class="btn btn-default" (click)="voteUp(entry)"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
-                <button class="btn btn-default" (click)="voteDown(entry)"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
-                <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                <div class="conainer">
+                    <div class="row">
+                        
+                        <nouislider class="col-md-8" [connect]="true" [min]="0" [max]="100" [(ngModel)]="userValue"></nouislider>
+                        <div class="col-md-3 detail-user">
+                            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <img src="{{ entry.user.avatarUrl }}" width="24" height="24" class="profile-image img-circle"> {{ entry.user.displayName }}
-            
 
         </div>
     </div>

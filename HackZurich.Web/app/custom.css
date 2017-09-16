@@ -2,9 +2,9 @@
     text-align: center;
 }
 
-.navbar-nav>li>a.profile-image {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.navbar-nav>li>a>img.profile-image {
+  margin: -10px 5px -10px -10px;
+  width:34px; height: 34px;
 }
 
 .clickable{
@@ -112,7 +112,8 @@ body {
 }
 
 .chat {
-  margin: 0;
+  
+  argin: 0;
   padding: 0;
   list-style: none;
 }
@@ -137,4 +138,8 @@ body {
 .chat-panel .panel-body {
   height: 350px;
   overflow-y: scroll;
+}
+
+.detail-user {
+  margin-top: 7px;
 }

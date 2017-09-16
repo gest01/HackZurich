@@ -8,17 +8,20 @@ import { FirebaseService } from "./firebase.service";
 
 export class DetailComponent {
     @Input() public entry: any;
+    public userValue: any;
 
     constructor(
         private firebaseService: FirebaseService,
-    ) { }
+    ) {
+        this.userValue = 50;
+    }
 
     public voteUp(entry: any): void {
-        console.log("voteUp...", entry);
+        console.log("voteUp..." + this.userValue, entry);
     }
 
     public voteDown(entry: any): void {
-        console.log("voteDown...", entry);
+        console.log("voteDown..." + this.userValue, entry);
     }
 
     public delete(entry: any): void {
