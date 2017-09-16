@@ -23,10 +23,11 @@ import { FileUploadComponent } from "./fileupload/fileupload.component";
 import { NouisliderModule } from "ng2-nouislider";
 import { NgLoadingBarModule } from "ng-loading-bar";
 import { HTTP_INTERCEPTOR } from "./http-interceptor";
-import { PopoverModule, AccordionModule  } from "ngx-bootstrap";
+import { PopoverModule, AccordionModule } from "ngx-bootstrap";
 import { StatsItemComponent } from "./myStats/stats-item.component";
 import { OverallStatsComponent } from "./myStats/overall-stats.component";
 import { OnlyMinePipe } from "./only-mine.pipe";
+import { RatingsComponent } from "./ratings/ratings.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC714sV9ckNYVHS4RLxcTx4GjxXJFTszwg",
@@ -44,7 +45,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     PopoverModule.forRoot(),
-    AccordionModule .forRoot(),
+    AccordionModule.forRoot(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
@@ -62,6 +63,7 @@ export const firebaseConfig = {
     StatsItemComponent,
     OverallStatsComponent,
     OnlyMinePipe,
+    RatingsComponent,
   ],
   providers: [
     DataService,

@@ -1,0 +1,7 @@
+<h3>Ratings</h3>
+<hr />
+
+
+<div *ngIf="(user | async); let user;">
+    <detail-item *ngFor="let entry of entries | async" [entry]="entry" [user]="user"></detail-item>
+</div>
