@@ -48,24 +48,12 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="col-md-2" *ngIf="currentUser.uid === user.uid" > 
+                                        <div class="col-md-2" *ngIf="currentUser.uid === user.uid">
                                             <button class="btn pull-right" (click)="delete(entry)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.google">
-                                            <th colspan="10">Google Stats:</th>
-                                            <tr>
-                                                <td>
-                                                    <span *ngFor="let gitem of entry.foodFacts.google">{{gitem.description}}, </span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.google">
                                                 <th colspan="10">Google Stats:</th>
                                                 <tr>
@@ -75,17 +63,17 @@
                                                 </tr>
                                             </table>
                                         </div>
+                                    </div>
+                                    <div class="row" *ngIf="entry.foodFacts && entry.foodFacts.nutritionFacts">
                                         <div class="col-md-6">
                                             <table class="table table-bordered" *ngIf="entry.foodFacts && entry.foodFacts.sports">
-                                                <th colspan="10">Sport Stats:</th>
+                                                <th colspan="10">Sport Compensation:</th>
                                                 <tr *ngFor="let titem of entry.foodFacts.sports.text">
                                                     <td>{{titem}}</td>
                                                 </tr>
                                             </table>
                                         </div>
-                                    </div>
-                                    <div class="row" *ngIf="entry.foodFacts && entry.foodFacts.nutritionFacts">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <table class="table table-bordered">
                                                 <th colspan="10">Nutrition Facts:</th>
                                                 <tr *ngFor="let titem of entry.foodFacts.nutritionFacts.text">
@@ -102,3 +90,4 @@
             </div>
         </div>
     </div>
+</div>
