@@ -1,6 +1,6 @@
 <div *ngIf="user | async; let user;">
 
-    <h1>Health - Stats for {{ user.displayName  }}</h1>
+    <h1>Health - Stats for {{ user.displayName }}</h1>
 
     <overall-stats [user]="user"></overall-stats>
 
@@ -8,7 +8,12 @@
         <accordion-group #group [isOpen]="true">
             <div accordion-heading>
                 Food journal
+                <a class="twitter-share-button pull-right" [attr.href]="'https://twitter.com/intent/tweet?text=Check%20my%20health%20stats%20http%3A%2F%2Fwww.css-cleanfood.ch%2F%23%2Fmystats/'+  user.uid ">
+                    <i class="fa fa-twitter fa-2x " aria-hidden="true"></i>
+                    </a>
+
             </div>
+
 
             <div>
                 <div *ngIf="entries | async; let entries;">
